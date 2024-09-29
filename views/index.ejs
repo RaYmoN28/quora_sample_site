@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample quore Site</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Quora Site</h1>
+
+    <% for(Data of Data) {%>
+        <div class="text_area">
+            <h3> @<%=Data.username %>
+            </h3>
+            <h4>
+                <%=Data.content %>
+            </h4>
+        </div>
+        <br>
+        <br>
+        <a href="http://localhost:8080/posts/<%=Data.id%>">view your post</a>
+        <a href="http://localhost:8080/posts/<%=Data.id%>/edit">edit</a>
+        <form method="post" action="/posts/<%=Data.id%>?_method=DELETE">
+            <button>
+                delete
+            </button>
+        </form>
+
+        <% } %>
+
+            <br>
+            <br>
+            <a href="http://localhost:8080/posts/new">create a new form</a>
+</body>
+
+</html>
